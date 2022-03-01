@@ -1,0 +1,19 @@
+<div
+     (keydown.enter)="addText()">
+  <form class="add-new" >
+    <!--      >-->
+    <input type="text"
+
+           [value]="newWriting"
+           (input)="newWriting = ($any($event).target.value)"/>
+  </form>
+</div>
+
+<p *ngFor="let text of article">
+  {{text.writing}}
+</p>
+
+
+
+<input #Image type="file" (change)="handleFileInput($event.target.files)"/>
+<img width="100%" *ngIf="imageUrl" [src]="imageUrl" class="image">

@@ -1,0 +1,45 @@
+<div *ngIf="users" >
+  <a onClick="window.location.reload()" class="nav-item nav-link" (click)="logout()">Logout</a>
+</div>
+
+<div *ngIf="users"
+     (keydown.enter)="addText()">
+<form class="add-new" >
+<!--      >-->
+  <input type="text"
+
+         [value]="newWriting"
+         (input)="newWriting = ($any($event).target.value)"/>
+</form>
+</div>
+
+<p *ngFor="let text of article">
+  {{text.writing}}
+</p>
+
+
+
+<p>Velmi vela textu o tom, ze tu je nejaka stranka, a co naozaj robi urcite s plno chybami kedze slovenska
+gramatika je moj uhlavny nepriatel. A ja realne potrebujem vela textu a mam aj dost casu pisat
+taketo chobotoviny, kd uvidim, ci mam css dobre nastavene. Ale hlavne je , ze je tu vela textu,
+ako fakt. Fakt! Fakt!!! Faaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+(nadych)AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA !!!!!
+vELA TEXTU a neprepol som si capsLock a teraz to chvilu vyzeralo divne. Myslis, ze je to dost textu na about you stranku? </p>
+
+

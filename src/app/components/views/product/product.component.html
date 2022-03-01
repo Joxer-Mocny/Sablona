@@ -1,0 +1,12 @@
+<div *ngIf="users" >
+  <a onClick="window.location.reload()" class="nav-item nav-link" (click)="logout()">Logout</a>
+</div>
+<div>
+<p>Jednoznacne tu zajtra dokodim dzivy kod na pridavanie textu a obrazkov ( ak sa tak nestalo zajtra precitaj si to znova)</p>
+</div>
+
+<p *ngIf="users">
+  <a routerLinkActive="active" routerLink="/upload-product">Upload product</a></p>
+
+
+

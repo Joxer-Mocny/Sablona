@@ -1,0 +1,20 @@
+<div *ngIf="users" >
+  <a onClick="window.location.reload()" class="nav-item nav-link" (click)="logout()">Logout</a>
+</div>
+
+<div id="content">
+  <ul>
+    <a href="mailto:mail@mail.mail" target="_blank">mail</a>
+  </ul>
+  <ul>
+    <a href="tel:+421911123456">+421911123456</a>
+  </ul>
+  <ul>
+    <a href="http://www.facebook.com" target="_blank">facebook</a>
+  </ul>
+</div>
+
+<p *ngIf="users">
+ Change contact</p>
+
+

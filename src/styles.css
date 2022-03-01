@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+#app{
+  text-align: center;
+  margin: 0em auto 2em;
+  max-width:  48em;
+}
+a {
+  color: black;
+  font-size: 1.1em;
+  font-weight: 800;
+  text-decoration: none;
+
+  cursor: pointer;
+  padding: 0.57em 0.65em;
+  display: inline-block;
+}
+nav a:hover {
+  border-bottom: 5px solid red;
+}
+a.active {
+  color: green;
+}
+
+nav{
+  margin: 2em auto 2.5em;
+  padding: 0 1.25em;
+  display: inline-block;
+
+  vertical-align: middle;
+  background: transparent;
+  white-space: nowrap;
+
+  border: 3px solid white;
+  border-radius: 2.5em;
+}
+#content{
+  font-size: 1.15em;
+  line-height:  1.5em;
+  padding: 1.5em 1.75em;
+  transform: translate(-17px, -5px);
+}
+#content ul a:hover {
+  border-bottom: 5px solid red;
+}
+@media screen and (max-width: 520px) {
+  #app{
+    font-size: 0.85em;
+  }
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

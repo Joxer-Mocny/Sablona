@@ -1,0 +1,26 @@
+<div *ngIf="users" >
+  <a onClick="window.location.reload()" class="nav-item nav-link" (click)="logout()">Logout</a>
+</div>
+
+<div *ngIf="users"
+     (keydown.enter)="addText()">
+  <form class="add-new" >
+    <!--      >-->
+    <input type="text"
+
+           [value]="newWriting"
+           (input)="newWriting = ($any($event).target.value)"/>
+  </form>
+</div>
+
+<p *ngFor="let text of article">
+  {{text.writing}}
+</p>
+
+<p>Ja som nejaka stranka na ktorej najdes plno vela veci ktore ta mozu zaujimat a nejake veci sa tu pisu na zaciatok
+  aby si vedel na akej stranke sa nachadzas a isto tu budu aj chyby len potrebujem vela textu napisat aby som videl ako
+  to naformatovat a nevyzeralo to na penis usaty.
+</p>
+
+
+
