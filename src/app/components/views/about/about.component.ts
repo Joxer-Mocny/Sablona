@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {User} from "@app/models";
 import {AuthenticationService, UserService} from "@app/service";
 import {first} from "rxjs/operators";
+import {AboutService} from "@app/service/about.service";
+import {Router} from "@angular/router";
+import {About} from "@app/models/about";
 
-interface Text{
-  writing: string
-}
 
 @Component({
   selector: 'app-about',
@@ -13,16 +13,18 @@ interface Text{
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  // this is for showing adn hiding
+  // this is for showing and hiding
   user!: User;
   users!: User[];
 
-  // This is for add text
-  newWriting: string= ''
-  article: Text[]= []
+  article!: About[];
+  about:About = new About();
 
-  constructor(private userService: UserService,
-              private authenticationService: AuthenticationService,) {
+  constructor(
+                private userService: UserService,
+              private authenticationService: AuthenticationService,
+              private aboutService: AboutService,
+              private router: Router) {
 
     this.authenticationService.user.subscribe(x => this.user = x);
   }
@@ -40,19 +42,38 @@ export class AboutComponent implements OnInit {
     fetch('https://api.json.com/bins/zg7ze')
       .then(res => res.json())
       .then(json => (this.article = json))
-
+    this.getAboutText()
   }
 
-  addText(){
-    this.article.push({
-      writing: this.newWriting
-    })
+
+  saveAboutText(){
+    this.aboutService.createAbout(this.about).subscribe(
+      data => {
+        console.log(data);
+        this.goToAboutTextList();
+
+      },
+      error => console.log(error));
+  }
+  goToAboutTextList(){
+    this.router.navigate(['/about_text']).then();
   }
 
+  onSubmit(){
+    console.log(this.about);
+    this.saveAboutText();
+  }
 
   logout() {
     this.authenticationService.logout();
   }
+
+// show about text
+   private getAboutText(){
+    this.aboutService.getAboutText().subscribe(data=>{
+      this.article= data;
+    })
+   }
 
 
 }

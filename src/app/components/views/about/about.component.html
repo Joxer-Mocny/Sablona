@@ -2,21 +2,24 @@
   <a onClick="window.location.reload()" class="nav-item nav-link" (click)="logout()">Logout</a>
 </div>
 
-<div *ngIf="users"
-     (keydown.enter)="addText()">
-<form class="add-new" >
-<!--      >-->
-  <input type="text"
+<div *ngIf="users">
 
-         [value]="newWriting"
-         (input)="newWriting = ($any($event).target.value)"/>
-</form>
+  <form (ngSubmit) = "onSubmit()" >
+
+    <input type="text"
+           class="form-control"
+           id="aboutText"
+           [(ngModel)]="about.aboutText" name="aboutText">
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+
+
 </div>
 
-<p *ngFor="let text of article">
-  {{text.writing}}
-</p>
+<p *ngFor="let aboutText of article">
+  {{aboutText.aboutText}}
 
+</p>
 
 
 <p>Velmi vela textu o tom, ze tu je nejaka stranka, a co naozaj robi urcite s plno chybami kedze slovenska
